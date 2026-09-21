@@ -10,9 +10,8 @@ class Codeatlas < Formula
   depends_on "python@3.12"
 
   def install
-    venv = virtualenv_create(libexec, "python3.12")
-    system libexec/"bin/pip", "install", "--upgrade", "pip"
-    system libexec/"bin/pip", "install", buildpath
+    virtualenv_create(libexec, "python3.12")
+    system "python3.12", "-m", "pip", "--python=#{libexec}/bin/python", "install", buildpath
     bin.install_symlink libexec/"bin/codeatlas"
   end
 
