@@ -7,6 +7,8 @@ class Codeatlas < Formula
   sha256 "7461632cbe7a9b58790fbe50247faf5e64d6786a362630322717e2c9314cad1a"
   license "MIT"
 
+  preserve_rpath
+
   depends_on "python@3.12"
 
   def install
